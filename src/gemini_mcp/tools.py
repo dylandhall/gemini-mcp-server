@@ -93,11 +93,11 @@ async def use_gemini(
     model: Annotated[
         Literal["gemini-3.5-flash", "gemini-3.1-flash-lite", "gemini-pro-latest"],
         Field(
-            description="The Gemini model to use. Use 'gemini-2.5-pro-preview-06-05' for complex tasks needing advanced reasoning and 'gemini-2.5-flash-preview-05-20' for speed and cost-efficiency."
+            description="The Gemini model to use. Options include 'gemini-3.5-flash' for fast responses, 'gemini-pro-latest' for advanced reasoning, and 'gemini-3.1-flash-lite' for high-speed tasks."
         ),
     ] = "gemini-3.5-flash",
 ) -> TextToolOutput:
-    """Use this tool to delegate a task to a specified Gemini model (Pro or Flash).
+    """Use this tool to delegate a task to a specified Gemini model (e.g., gemini-3.5-flash, gemini-pro-latest).
 
     This tool can be used for a wide range of tasks, including complex reasoning,
     content generation, summarization, and planning. It acts as a powerful
