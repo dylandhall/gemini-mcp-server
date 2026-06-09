@@ -47,7 +47,7 @@ async def web_search(
     current_date_str = get_current_date()
 
     response = await genai_client.aio.models.generate_content(
-        model="gemini-2.0-flash",
+        model="gemini-3.5-flash",
         contents=web_search_prompt.format(
             query=query, current_date_str=current_date_str
         ),
@@ -91,11 +91,11 @@ async def use_gemini(
         ),
     ],
     model: Annotated[
-        Literal["gemini-2.5-pro-preview-06-05", "gemini-2.5-flash-preview-05-20"],
+        Literal["gemini-3.5-flash", "gemini-3.1-flash-lite"],
         Field(
             description="The Gemini model to use. Use 'gemini-2.5-pro-preview-06-05' for complex tasks needing advanced reasoning and 'gemini-2.5-flash-preview-05-20' for speed and cost-efficiency."
         ),
-    ] = "gemini-2.5-flash-preview-05-20",
+    ] = "gemini-3.5-flash",
 ) -> TextToolOutput:
     """Use this tool to delegate a task to a specified Gemini model (Pro or Flash).
 
