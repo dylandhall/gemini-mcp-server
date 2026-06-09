@@ -91,7 +91,7 @@ async def use_gemini(
         ),
     ],
     model: Annotated[
-        Literal["gemini-3.5-flash", "gemini-3.1-flash-lite"],
+        Literal["gemini-3.5-flash", "gemini-3.1-flash-lite", "gemini-pro-latest"],
         Field(
             description="The Gemini model to use. Use 'gemini-2.5-pro-preview-06-05' for complex tasks needing advanced reasoning and 'gemini-2.5-flash-preview-05-20' for speed and cost-efficiency."
         ),
